@@ -3,16 +3,22 @@
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+body{
+    display: flex;
+}
 header{
     display: flex;
-    background-color: #252525;
+    background-color: #ffffff;
     justify-content: space-between;
     padding: 1px 2%;
     height: 70px;
+    width: 100%;
+    position: fixed;
   
   
 }.info-header{
     display: flex;
+    position: fixed;
 
 }
 .logo{
@@ -22,9 +28,14 @@ header{
 }
 .icones_header{
     display:flex ;
-    width: 30px;
+    width: 20px;
     align-items: center;
+    margin-right: 50px;
     
+}
+.icones_header img{
+    width: 25px;
+
 }
 .usuario_img{
     width: 20px;
@@ -43,18 +54,31 @@ header{
     flex-direction: column;
     width: 100%;
     height: 2040px;
-    background-color: beige;
+    margin-top: 70px;
+    background-color: rgb(139, 129, 129);
+align-items: center;
 }
 .nav_bar h3{
-    color: #333;
+    text-align: center;
+    color: #ffffff;
     font-size: 20px;
 }
 .nav_bar a{
     margin-left:15px ;
     margin-top: 10px;
+    
     text-decoration: none;  /* Comando para tirar a linha do link  */
-    color: #252525;
+    color: #ffffff;
 
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(44, 42, 42);
+    border-radius: 10px;
+    margin-top: 20px;
+    height: 200px;
+    width: 200px;
 }
 .content{
     width: 90%;
