@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+ <header>
+
+        <div class="nav_bar">
+
+            <img class="logo" src="img/logooficial-removebg-preview.png" alt="">
+            <div class="botoes">
+                <a href="">
+                    <img class="img_botão" src="img/do-utilizador.png" alt="">
+                </a>
+
+
+            </div>
+        </div>
+
+    </header>
+    <center>
+        <div id="CADmarca" class="container" style="display: block;">
+            <h1>CADASTRE SUA MARCA</h1>
+
+            
+            <input type="text" id="input_nome_marca" placeholder="Nome">
+            
+            <input type="text" id="input_cnpj_marca" placeholder="CNPJ">
+            
+            <input type="text" id="input_email_marca" placeholder="Email">
+            
+            <input type="password" id="input_senha_marca" placeholder="Senha">
+            
+            <input type="password" id="input_confirmar_marca" placeholder="Confirmar Senha">
+            
+            <input type="text" id="input_tel1" placeholder="Telefone 1">
+            
+            <input type="text" id="input_tel2" placeholder="Telefone 2">
+            
+            <button onclick="CadastrarMarca()">Cadastrar</button>
+            
+            
+            <h3 onclick="PossuoConta()">Já possuo conta</h3>
+
+            <div id="mensagemErroMarca" style="display: none; width: 30%;">
+
+                Suas Informações estão incompletas!
+                <br>
+
+                <button onclick="RefazerCad()">Refazer Cadastro</button>
+
+            </div>
+
+        </div>
+    
+
+        <div id="CADuser" class="container" style="display: none;">
+           <h1> CADASTRE SEU USUÁRIO</h1>
+
+            
+            <input type="text" id="input_nome_user" placeholder="USERname">
+            
+            <input type="text" id="input_cpf_user" placeholder="CPF">
+            
+            
+            <input type="text" id="input_senha_user" placeholder="Senha">
+            
+            <input type="text" id="input_confirmar_user" placeholder="Confirmar Senha">
+            
+            <button onclick="CadastrarUser()">Cadastrar</button>
+            
+
+            <div id="mensagemErroUser" style="display: none; width: 30%;">
+
+                Suas Informações estão incompletas!
+                <br>
+
+                <button onclick="RefazerCad()">Refazer Cadastro</button>
+
+            </div>
+
+        </div>
+      
+
+         
+
+        <div id="LOGuser" class="container" style="display: none;">
+
+            <h1>LOGIN</h1>
+        
+            <input type="text" id="input_userLogin" placeholder="insira seu nome de usuário">
+          
+            <input type="text" id="input_emailLogin" placeholder="insira o email da empresa">
+    
+            <input type="text" id="input_cpfLogin" placeholder="Insira seu cpf">
+          
+            <input type="password" id="input_senhaLogin" placeholder="senha">
+       
+     
+            <button onclick="Logar()">Entrar</button>
+       
+            <div id="mensagemErroLogin"> Falha ao cadastrar <br>
+
+                <h3 onclick="semCadastro()">Não possui cadastro?</h3>
+
+            </div>
+
+        </div>
+  
+
+    </center>
+</body>
+
+</html>
+
+<script>
+
+    var lista_nomeMarca = []
+    var lista_cnpjMarca = []
+    var lista_emailMarca = []
+
+    var lista_cpfUser = []
+    var lista_nomeUser = []
+    var lista_senhaUser = []
+
+    function CadastrarMarca() {
+
+
+        var nomeMarca = input_nome_marca.value;
+        var cnpjMarca = input_cnpj_marca.value;
+        var emailMarca = input_email_marca.value;
+        var senhaMarca = input_senha_marca.value;
+        var confirmarMarca = input_confirmar_marca.value;
+        var arrobaPosicaoMarca = emailMarca.indexOf("@");
+        var tel1 = input_tel1.value
+        var tel2 = input_tel2.value
+
+        var indice_lista_nomeMarca = lista_nomeMarca.indexOf(nomeMarca);
+        var indice_lista_emailMarca = lista_emailMarca.indexOf(emailMarca);
+        var indice_lista_cnpjMarca = lista_cnpjMarca.indexOf(cnpjMarca);
+
+        if (nomeMarca.length < 3 ||
+            nomeMarca == '' ||
+            cnpjMarca.length < 13 ||
+            cnpjMarca == '' ||
+            arrobaPosicaoMarca < 1 ||
+            senhaMarca.length < 8 ||
+            senhaMarca == '' ||
+            senhaMarca != confirmarMarca ||
+            confirmarMarca == '' ||
+            tel1.length != 11 ||
+            tel1 == '' ||
+            tel2.length != 11 ||
+            tel2 == '') {
+
+            mensagemErroMarca.style.display = 'block'
+
+        } else {
+
+            if (indice_lista_nomeMarca == -1 ||
+                indice_lista_emailMarca == -1 ||
+                indice_lista_cnpjMarca == -1) {
+
+                lista_emailMarca.push(emailMarca);
+                lista_nomeMarca.push(nomeMarca);
+                lista_cnpjMarca.push(cnpjMarca);
+                alert('Cadastro de Marca executado com Sucesso!');
+
+
+                //Descomentar código para continuidade a apresentação
+                CADmarca.style.display = 'none'
+                CADuser.style.display = 'block'
+
+            } else {
+
+
+                alert('Essa marca já está cadastrada!')
+
+            }
+        }
+
+    }
+
+    function RefazerCad() {
+
+        mensagemErroMarca.style.display = 'none'
+
+    }
+
+
+
+    function CadastrarUser() {
+
+
+        var nomeUser = input_nome_user.value
+        var cpfUser = input_cpf_user.value
+        var senhaUser = input_senha_user.value
+        var confirmarUser = input_confirmar_user.value
+
+        var indice_lista_nomeUser = lista_nomeMarca.indexOf(nomeUser);
+        var indice_lista_cpfUser = lista_cpfUser.indexOf(cpfUser);
+        var indice_lista_senhaUser = lista_senhaUser.indexOf(senhaUser);
+
+        if (nomeUser.length < 3 ||
+            nomeUser == '' ||
+            cpfUser.length < 13 ||
+            cpfUser == '' ||
+            senhaUser.length < 8 ||
+            senhaUser == '' ||
+            senhaUser != confirmarUser ||
+            confirmarUser == '') {
+
+            mensagemErroUser.style.display = 'block'
+
+        } else {
+
+            if (indice_lista_nomeUser == -1 ||
+                indice_lista_cpfUser == -1) {
+
+                lista_nomeUser.push(nomeUser);
+                lista_cpfUser.push(cpfUser);
+                alert('Cadastro de Usuário executado com Sucesso!');
+
+                LOGuser.style.display = 'block'
+                CADuser.style.display = 'none'
+
+            } else {
+
+                alert('Já existe um usuário cadastrado!')
+
+            }
+        }
+    }
+
+    function PossuoConta() {
+
+        CADmarca.style.display = 'none';
+        CADuser.style.display = 'none';
+        LOGuser.style.display = 'block';
+
+    }
+
+    function Login() {
+
+        var UserLogin = input_userLogin.value;
+        var emailLogin = input_emailLogin.value;
+        var cpfLogin = input_cpfLogin.value;
+
+        if (lista_cpfUser != -1 && lista_cnpjMarca != -1 && lista_emailMarca != -1) {
+
+            alert('Login executado com sucesso!')
+            location.href = 'C:\Users\Fabrício Bonacelli\Sprint\oficialdashboard.html';
+
+        } else {
+
+            mensagemErroLogin.style.display = 'block'
+
+        }
+
+    }
+
+    function PossuoConta() {
+
+        CADmarca.style.display = 'block';
+        CADuser.style.display = 'none'
+        LOGuser.style.display = 'none'
+
+    }
+
+</script>
