@@ -8,12 +8,14 @@ body{
 }
 header{
     display: flex;
-    background-color: #ffffff;
+    background-color: #000000;
+    color: white;
     justify-content: space-between;
     padding: 1px 2%;
-    height: 70px;
+    height: 100px;
     width: 100%;
     position: fixed;
+    align-items: center;
   
   
 }.info-header{
@@ -37,51 +39,42 @@ header{
     width: 25px;
 
 }
-.usuario_img{
-    width: 20px;
-    height: 20px;
 
-}
 .pai{
     display: flex;
-   flex-wrap: wrap;
-    width: 20%;
-    height: 100%;
-}
-
-.nav_bar{
-    display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 2040px;
-    margin-top: 70px;
-    background-color: rgb(139, 129, 129);
-align-items: center;
+    height: 1080px;
+    background-color: rgb(255, 255, 255);
 }
-.nav_bar h3{
-    text-align: center;
-    color: #ffffff;
-    font-size: 20px;
+.img_entrada{
+    display: flex;
+    width: 70%;
+    height: 1000px;
 }
-.nav_bar a{
-    margin-left:15px ;
-    margin-top: 10px;
-    
-    text-decoration: none;  /* Comando para tirar a linha do link  */
-    color: #ffffff;
+.padrasto{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
 
-}
 .container{
     display: flex;
     flex-direction: column;
-    background-color: rgb(44, 42, 42);
-    border-radius: 10px;
-    margin-top: 20px;
-    height: 200px;
-    width: 200px;
+    background-color: rgb(207, 207, 207);
+    margin-top: 100px;
+    margin-left: 50px;
+    height: 500px;
+    width: 500px;
 }
-.content{
-    width: 90%;
-    background-color: rgb(0, 0, 0);
-    margin-bottom: 200px;
+.container p{
+    margin-top: 40px;
+    margin-left: 20px;
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 36px;
 }
