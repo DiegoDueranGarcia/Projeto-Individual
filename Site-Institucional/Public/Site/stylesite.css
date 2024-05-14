@@ -1,0 +1,185 @@
+@font-face {
+    font-family: MotoVerse;
+    src: url(../Site/Fontes/moto_verse/moto-verse.ttf);
+}
+@font-face {
+    font-family:BlackLive ;
+    src: url(../Site/Fontes/a_black_lives/aBlackLives.ttf);
+}
+@font-face {
+    font-family: LemonMilk;
+    src: url(../Site/Fontes/lemon_milk/LEMONMILK-Light.otf);
+}
+@font-face {
+    font-family: LemonTexto;
+    src: url(../Site/Fontes/lemon_milk/LEMONMILK-Regular.otf);
+}
+.SafeTrail{
+    font-family: MotoVerse;
+    color: #FF8E00;
+}
+
+* {
+    margin: 0px;
+    padding: 0%;
+    max-width: 100%;
+   
+}
+header {
+    display: flex;
+    width: 100%;
+
+} 
+.nav_bar {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    position: fixed;
+    background-color: #00000094;
+    justify-content: space-between;
+   
+
+}
+.botoes{
+    display: flex;
+    width: 80%;
+    height: 40px;
+    align-items: center;
+    border-radius: 10px;
+ 
+    justify-content: space-around;
+
+}
+.botoes a {
+    display: flex;
+    text-decoration: none;
+ 
+   
+}
+ .nav_bar p {
+    display: flex;
+    flex-direction: row;
+    font-family: BlackLive;
+    color: #ffffff;
+} 
+.logo {
+
+  width: 500px;
+    display: flex;
+    color: #ffffff;
+    justify-content: space-around;
+}
+
+ .logo img{
+    width: 60px;
+    height: 50px;
+} 
+.pai{
+    display: flex;
+    width: 100%;
+    height: 1000px; 
+    flex-direction: column;
+
+}
+.img_entrada{
+    display: flex;
+    width: 100%;
+    height: 500px; 
+}
+
+.mae_1{
+    display: flex;
+    flex-direction: row;
+    height: 700px;
+    width: 100%;
+    align-items: center;
+    background-color: #151414;
+
+
+}
+.container {
+
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+  height: 500px;
+   color: #ffffff;
+   margin-left: 20px;
+
+  
+ 
+}
+.container h1{
+    display: flex;
+    margin-top: 20%;
+    margin-bottom: 10%;
+    font-family:LemonMilk; 
+}
+.container p{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mae_2{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #151414;
+    width: 100%;
+
+
+
+}
+.posicao{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.mae_2 h1{  
+    display: flex;
+    width: 100%;
+    font-family: LemonMilk;
+    color: #ffffff;
+
+    /* margin-left: 30px; */
+}
+
+
+.mae_2 h3 {
+    font-size: 30px;
+    font-family: LemonMilk;
+
+
+
+
+}
+
+.container_2{
+    display: flex;
+    flex-direction: column;
+margin-top: 200px;
+    width:50%;
+    height: 500px;
+    color: #ffffff;
+    align-items: center;
+    background-color: #151414;
+
+
+
+}
+.mae_2 img{
+    width: 50%;
+    height: 450px;
+    }
+.container_2 i{
+    font-family: LemonTexto;
+}
+.container_2 em{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: LemonTexto;
+    color: red;
+}
+
